@@ -74,7 +74,11 @@ text-align: center;
 }
 
 .msgtn{
-    height: 30vmin;
+    height: 90vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
 }
 
 .hide{

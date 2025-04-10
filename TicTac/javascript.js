@@ -11,6 +11,7 @@ let timeLeft; // Variable to store the remaining time
 // Function to start the timer
 const startTimer = (duration) => {
     timeLeft = duration;
+    const timerElement = document.querySelector("#timer"); // Select the timer element
     const timerInterval = setInterval(() => {
         if (timeLeft <= 0) {
             clearInterval(timerInterval);
@@ -18,7 +19,9 @@ const startTimer = (duration) => {
             msgContainer.classList.remove("hide");
             disableBoxes();
         } else {
-            console.log(`Time left: ${timeLeft}s`); // Optional: Log time left
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            timerElement.innerText = `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`; // Update timer display
             timeLeft--;
         }
     }, 1000);
