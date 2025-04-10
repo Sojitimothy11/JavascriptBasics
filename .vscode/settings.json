@@ -1,0 +1,7 @@
+{
+    "livePreview.customExternalBrowser": "Edge",
+    "workbench.externalBrowser": "",
+    "liveServer.settings.AdvanceCustomBrowserCmdLine": "",
+    "liveServer.settings.CustomBrowser": "microsoft-edge",
+    "liveServer.settings.NoBrowser": false
+}
