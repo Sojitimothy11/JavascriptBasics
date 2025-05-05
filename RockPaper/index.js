@@ -6,7 +6,7 @@ const msg = document.querySelector("#msg");
 const userScoreParagraph = document.querySelector("#user-score span");
 const compScoreParagraph = document.querySelector("#comp-score span");
 
-// Function to get the computer's choice
+// Function to get the computer's choice **
 const getComputerChoice = () => {
     const choices = ["rock", "paper", "scissors"];
     return choices[Math.floor(Math.random() * 3)];
@@ -15,7 +15,7 @@ const getComputerChoice = () => {
 // Function to handle a draw
 const drawGame = (userChoice, compChoice) => {
     msg.innerText = `It's a draw! You chose ${userChoice}, Computer chose ${compChoice}. Score: ${userScore} : ${compScore}`;
-    msg.style.backgroundColor = "yellow";
+    msg.style.backgroundColor = "yellow";g
 };
 
 // Function to show the winner
