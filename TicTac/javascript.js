@@ -21,7 +21,7 @@ const startTimer = (duration) => {
         } else {
             const minutes = Math.floor(timeLeft / 60);
             const seconds = timeLeft % 60;
-            timerElement.innerText = `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`; // Update timer display
+            timerElement.innerText = `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`; 
             timeLeft--;
         }
     }, 1000);
@@ -98,6 +98,8 @@ const showWinner = (winner) => {
 };
 
 const checkWinner = () => {
+    let isDraw = true; // Assume it's a draw unless proven otherwise
+
     for (let pattern of winPattern) {
         let pos1 = boxes[pattern[0]].innerText;
         let pos2 = boxes[pattern[1]].innerText;
@@ -109,8 +111,24 @@ const checkWinner = () => {
                 boxes[pattern[1]].style.backgroundColor = "black";
                 boxes[pattern[2]].style.backgroundColor = "black";
                 showWinner(pos1); // Pass the winner symbol ("0" or "x")
+                return; // Exit the function if a winner is found
             }
         }
+    }
+
+    // Check if all boxes are filled
+    for (let box of boxes) {
+        if (box.innerText === "") {
+            isDraw = false; // If any box is empty, it's not a draw
+            break;
+        }
+    }
+
+    if (isDraw) {
+        msg.innerText = "It's a Draw!";
+        msgContainer.classList.remove("hide");
+        disableBoxes();
+        clearInterval(timer); // Stop the timer when the game ends in a draw
     }
 };
 
@@ -118,5 +136,5 @@ const checkWinner = () => {
 newGameBtn.addEventListener("click",resetGame);
 resetBtn.addEventListener("click",resetGame);
 
- enableBoxes();
+enableBoxes();
 
