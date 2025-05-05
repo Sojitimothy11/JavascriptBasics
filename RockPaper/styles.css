@@ -1,18 +1,20 @@
-*{
+* {
     margin: 0;
     padding: 0;
     text-align: center;
+    box-sizing: border-box;
 }
 
-h1{
+h1 {
     background: #081b31;
     color: #fff;
     height: 5rem;
     line-height: 5rem;
+    font-size: 2rem;
 }
 
-.choice{
-    height:165px;
+.choice {
+    height: 165px;
     width: 165px;
     background: #081b31;
     display: flex;
@@ -21,48 +23,128 @@ h1{
     border-radius: 50%;
 }
 
-img:hover{
+img:hover {
     opacity: 0.5;
     cursor: pointer;
     box-shadow: 0 0 7rem rgba(22, 20, 20, 0.5);
 }
 
-img{height: 150px;
+img {
+    height: 150px;
     width: 150px;
     object-fit: cover;
     border-radius: 50%;
 }
 
-.choices{
+.choices {
     display: flex;
     justify-content: center;
     gap: 3rem;
     margin-top: 5rem;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
-.score-board{
+.score-board {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 3rem;
     margin-top: 2rem;
-    font-size:2rem;
+    font-size: 2rem;
 }
 
-.msg-container{
+.msg-container {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 3rem;
     margin-top: 2rem;
-    font-size:2rem; 
+    font-size: 2rem;
 }
 
-.msg{
-    background-color:#081b31;
+.msg {
+    background-color: #081b31;
     margin-top: 1rem;
-    display: inline;
+    display: inline-block;
     color: #fff;
-    padding: 0.5rem 0.5rem;
+    padding: 0.5rem 1rem;
     border-radius: 1rem;
+}
+
+/* Media query for smaller screens (mobile view) */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+        height: 4rem;
+        line-height: 4rem;
+    }
+
+    .choice {
+        height: 120px;
+        width: 120px;
+    }
+
+    img {
+        height: 100px;
+        width: 100px;
+    }
+
+    .choices {
+        gap: 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .score-board {
+        font-size: 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .msg-container {
+        font-size: 1.2rem;
+        margin-top: 1.5rem;
+    }
+
+    .msg {
+        padding: 0.5rem;
+        font-size: 1rem;
+    }
+}
+
+/* Media query for very small screens (e.g., 480px and below) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.2rem;
+        height: 3.5rem;
+        line-height: 3.5rem;
+    }
+
+    .choice {
+        height: 90px;
+        width: 90px;
+    }
+
+    img {
+        height: 80px;
+        width: 80px;
+    }
+
+    .choices {
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+
+    .score-board {
+        font-size: 1.2rem;
+        gap: 1rem;
+    }
+
+    .msg-container {
+        font-size: 1rem;
+        margin-top: 1rem;
+    }
+
+    .msg {
+        padding: 0.3rem;
+        font-size: 0.9rem;
+    }
 }
